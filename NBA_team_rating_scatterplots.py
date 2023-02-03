@@ -15,7 +15,7 @@ df['path'] = 'team_logo/' + df['Team_formated'] + '.png'
 #create a copy of the data and remove unnecessary features
 df1 = df.copy()
 df1['Date'] = pd.to_datetime(df1["Date"]).dt.date
-df1 = df1.drop(['Rk', 'Team', 'Conf', ' Div', 'W', 'L', 'W/L%', 'MOV', 'NRtg', 
+df1 = df1.drop(['Rk', 'Team', 'Conf', 'Div', 'W', 'L', 'W/L%', 'MOV', 'NRtg', 
                 'MOV/A', 'ORtg/A', 'DRtg/A', 'NRtg/A'], axis = 1)
 
 
