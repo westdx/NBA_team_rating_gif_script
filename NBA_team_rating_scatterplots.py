@@ -19,7 +19,7 @@ df1 = df1.drop(['Rk', 'Team', 'Conf', 'Div', 'W', 'L', 'W/L%', 'MOV', 'NRtg',
                 'MOV/A', 'ORtg/A', 'DRtg/A', 'NRtg/A'], axis = 1)
 
 
-#retrieve image from path and reduce the image size to 5% of the original
+#retrieve image from the path and reduce the image size to 5% of the original
 def getImage(path):
     return OffsetImage(plt.imread(path), zoom = .05, alpha = 1)
 
@@ -29,7 +29,7 @@ def runScatter(dataframe):
     fig, ax = plt.subplots(figsize=(10, 10), dpi = 300)
     ax.scatter(dataframe['ORtg'], dataframe['DRtg'])
     
-    #replace point by team logo
+    #replace point with team logo
     for _, row in dataframe.iterrows():
         a = AnnotationBbox(getImage(row['path']), (row['ORtg'], row['DRtg']), frameon = False)
         ax.add_artist(a)
